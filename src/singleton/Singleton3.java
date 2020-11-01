@@ -1,3 +1,5 @@
+package singleton;
+
 /**
  * @author EricRaww
  * @create 2020-10-31
