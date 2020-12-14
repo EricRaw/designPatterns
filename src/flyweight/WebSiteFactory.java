@@ -1,0 +1,33 @@
+package flyweight;
+
+import java.util.HashMap;
+
+/**
+ * @author EricRaww
+ * @create 2020-12-14
+ * 网站工厂类，根据需要返回一个网站
+ */
+public class WebSiteFactory {
+    //集合，充当池的作用
+    private HashMap<String,ConcreteWebSite> pool=new HashMap<>();
+    /**
+     * 根据网站的类型，返回一个网站，如果没有就创建一个网站，并放回池中，并返回
+     * @param type
+     * @return
+     */
+    public WebSite getWebSiteCategory(String type){
+        if(!pool.containsKey(type)){
+            pool.put(type,new ConcreteWebSite(type));
+        }
+        return (WebSite)pool.get(type);
+    }
+
+    /**
+     * 返回池的大小
+     * @return
+     */
+    public int getSumofWebSite(){
+        return pool.size();
+    }
+
+}
