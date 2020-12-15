@@ -1,0 +1,16 @@
+@startuml
+
+abstract class AbstractClass
+
+
+AbstractClass <|-- ConcreteClass
+
+class AbstractClass {
+template()
+template1()
+template2()
+}
+
+
+
+@enduml
